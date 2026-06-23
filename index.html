@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediFinder - Find Pharmacies Near You</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">💊</span>
+                <h1>MediFinder</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#map-section" class="nav-link">Find Pharmacies</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Find Pharmacies Near You</h2>
+            <p>Locate nearby medical shops and pharmacies in real-time</p>
+            <button class="btn btn-primary" onclick="startFinding()">Get Started</button>
+        </div>
+        <div class="hero-image">
+            <div class="hero-icon">📍</div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map-section" class="map-container-section">
+        <h2>Find Nearby Pharmacies</h2>
+        <div class="map-wrapper">
+            <div id="map"></div>
+            <div class="map-controls">
+                <button class="btn btn-small" onclick="getCurrentLocation()">📍 Use My Location</button>
+                <button class="btn btn-small" onclick="clearMarkers()">Clear Map</button>
+            </div>
+        </div>
+        
+        <!-- Pharmacy List -->
+        <div class="pharmacy-list-container">
+            <h3>Nearby Pharmacies</h3>
+            <div id="pharmacyList" class="pharmacy-list">
+                <p class="placeholder-text">Click "Use My Location" to see pharmacies</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Our Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Auto Detect Location</h3>
+                <p>Automatically detect your current location using GPS</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3>Interactive Maps</h3>
+                <p>OpenStreetMap integration for precise pharmacy locations</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h3>Ratings & Reviews</h3>
+                <p>Read and share reviews about pharmacies</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚨</div>
+                <h3>Emergency Support</h3>
+                <p>Find 24/7 emergency pharmacies near you</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Medicine Delivery</h3>
+                <p>Request medicine delivery to your doorstep</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Friendly</h3>
+                <p>Fully responsive design for all devices</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Pharmacy Section -->
+    <section class="emergency-section">
+        <h2>Need Emergency Help?</h2>
+        <p>Find 24/7 emergency pharmacies instantly</p>
+        <button class="btn btn-danger" onclick="findEmergencyPharmacies()">Find Emergency Pharmacies</button>
+    </section>
+
+    <!-- Medicine Delivery Form Section -->
+    <section class="delivery-section">
+        <h2>Request Medicine Delivery</h2>
+        <form class="delivery-form" id="deliveryForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone" required>
+            <input type="text" placeholder="Medicine Name" required>
+            <input type="text" placeholder="Your Address" required>
+            <textarea placeholder="Special Instructions" rows="4"></textarea>
+            <button type="submit" class="btn btn-primary">Request Delivery</button>
+        </form>
+        <div id="deliveryMessage" class="message"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        <div id="contactMessage" class="message"></div>
+        <div class="contact-info">
+            <p>📧 Email: support@medifinder.com</p>
+            <p>📞 Phone: +1-800-PHARMACY</p>
+            <p>🌐 Website: www.medifinder.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 MediFinder. All rights reserved.</p>
+        <p>Created with ❤️ by Rohan Jogdand</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
